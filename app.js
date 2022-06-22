@@ -29,13 +29,16 @@ passwordText.value = password;
 
 writePassword();
 
+// create a generatedList variable that will receive all the info on characters
+generatedlist = []; // look into .push 
+// create a second bucket where all the randomised characters will be 
 
-
+// for in loop so that the numbers of characters are matching the desired length
 
   // prompt 1 about password lenght // How do you make it go back to the prompt?
   let passwordLength = prompt("Please choose a password length between between 8 and 128 characters");
-  if (passwordLength < 8) {alert("You need at least 8 characters"); // then goes back to the prompt 
-} else if (passwordLength > 128) {alert("The maximum length is 128 characters")}; // then goes back to the prompt 
+  if (passwordLength < 8) {alert("You need at least 8 characters"); 
+} else if (passwordLength > 128) {alert("The maximum length is 128 characters")}; 
 
 // confirm about special characters  
 specialCharacter = confirm("Would you like to include special characters?"); 
@@ -52,22 +55,22 @@ lowercaseCharacter = confirm("Would you like to include lowercase characters?");
 if (lowercaseCharacter) {}
 
 // array with all possible options ?
-specialCharacterSelected = [];
-numericCharacterSelected = [];
-uppercaseCharacterSelected = [];
-lowercaseCharacterSelected = [];
+specialCharacterSelected = ["!", "”", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "?", "@", "_", "`", "^", "[", "]", "{", "}", "|", "~"];
+numericCharacterSelected = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+uppercaseCharacterSelected = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+lowercaseCharacterSelected = ["a", "b", "c", "d", "e", "f", "g", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-// randomisation
-index = Math.floor(Math.random() * specialCharacter.length);
+// randomisation : this should only happen if one is selected and I have to move that in the if of each one
+index = Math.floor(Math.random() * specialCharacterSelected.length);
 specialCharacterChoice = specialCharacter[index];
 
-index = Math.floor(Math.random() * numericCharacter.length);
+index = Math.floor(Math.random() * numericCharacterSelected.length);
 numericCharacterChoice = numericCharacter[index];
 
-index = Math.floor(Math.random() * uppercaseCharacter.length);
+index = Math.floor(Math.random() * uppercaseCharacterSelected.length);
 upperCharacterChoice = uppercaseCharacter[index];
 
-index = Math.floor(Math.random() * lowercaseCharacter.length);
+index = Math.floor(Math.random() * lowercaseCharacterSelected.length);
 lowerCharacterChoice = lowercaseCharacter[index];
 
 
