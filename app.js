@@ -68,6 +68,7 @@ function generatePassword() {
   // if special characters is selected, store in selection array
   if (specialCharacter) {
     possibleCombo.push(specialCharsSelection);
+    
   }
 
   //get numeric characters with confirm
@@ -161,8 +162,7 @@ function generatePassword() {
     possibleCombo.push(lowercaseCharsSelection);
   }
 
-  // password variable is an array placeholder for user generated amount of length
-
+  // randomisedPassword variable is an array placeholder for user generated amount of length
   var randomisedPassword = [];
 
   //randomising possible combo
