@@ -1,7 +1,8 @@
-//button is clickable and needs to execute start of generate function
+
 
 var generateBtn = document.querySelector("#generate");
 
+//run generate password function and displays randomised password in password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -10,10 +11,12 @@ function writePassword() {
 }
 
 
-//// prompt with password length & validate length >8 & <128
-// if the length is outside of this scope the fonction will stop
-
 function generatePassword() {
+  // array receiving confirms for all types of characters
+  possibleCombo = [];
+
+  //prompt with password length & validattion of length >8 & <128
+  // if the length is outside of this scope the fonction will stop
   const passwordLength = prompt(
     "Please choose a password length of at least 8 characters and maximum 128 characters"
   );
@@ -22,9 +25,6 @@ function generatePassword() {
     alert("invalid number of characters, please try again");
     return;
   }
-
-  // array receiving confirms for all types of characters
-  selection = [];
 
   //get special characters with confirm
   const specialCharacter = confirm(
@@ -67,7 +67,7 @@ function generatePassword() {
 
   // if special characters is selected, store in selection array
   if (specialCharacter) {
-    selection.push(specialCharsSelection);
+    possibleCombo.push(specialCharsSelection);
   }
 
   //get numeric characters with confirm
@@ -79,9 +79,8 @@ function generatePassword() {
 
   // if numeric characters is selected, store in selection array
   if (numericCharacter) {
-    selection.push(numericCharsSelection);
+    possibleCombo.push(numericCharsSelection);
   }
-
   //get uppercase characters with confirm
   const uppercaseCharacter = confirm(
     "Would you like to include uppercase characters?"
@@ -119,7 +118,7 @@ function generatePassword() {
 
   // if upppercase characters is selected, store in selection array
   if (uppercaseCharacter) {
-    selection.push(uppercaseCharsSelection);
+    possibleCombo.push(uppercaseCharsSelection);
   }
 
   //get lowercase characters with confirm
@@ -128,7 +127,7 @@ function generatePassword() {
   );
 
   // arrays with all possible ulowercase characters
-  const lowercaseCharsSelection = [
+  var lowercaseCharsSelection = [
     "a",
     "b",
     "c",
@@ -159,14 +158,24 @@ function generatePassword() {
 
   // if lower characters is selected, store in selection array
   if (lowercaseCharacter) {
-    selection.push(lowercaseCharsSelection);
+    possibleCombo.push(lowercaseCharsSelection);
   }
 
-  var randomisedPassword = selection.join("");
+  // password variable is an array placeholder for user generated amount of length
 
+  var randomisedPassword = [];
+
+  //randomising possible combo
   for (var i = 0; i < passwordLength; i++) {
-    selection[Math.floor(Math.random() * selection.length)];
+    var randomisedChars =
+      possibleCombo[Math.floor(Math.random() * possibleCombo.length)];
   }
-  return randomisedPassword;
+  randomisedPassword.push(randomisedChars);
+
+  //final password will display in a single string
+  var finalPassword = randomisedPassword.join("");
+
+  return finalPassword;
 }
-generateBtn.addEventListener("click", writePassword);
+
+  generateBtn.addEventListener("click", writePassword);
