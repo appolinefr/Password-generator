@@ -10,14 +10,18 @@ The main acceptance criteria were as follow:
 - at least one character type should be selected
 - the generated password is must match the selected criteria
 
-This homework was overall not as challenging as expected as most of the content was covered during the classes. Deploying the page was a little overwhelming as this was not practised in class. Luckily the TA showed use the steps so it made this first hands-on experience smoother.
+## What I learned
+I learned many important fundamentals of javascript creating this project. I used a combination of arrays, function calls and how to return values, for statements as well as Math.Floor and Math.random.
+
+## Challenges
+This was the first javascript project I worked on so there were a few challenges in completing this project. I struggled to figure out how to best organise my code. I was able to push through by searching documentation and trying a few different ways of getting the expected result. 
 
 ### Link to deployed page
 
-https://appolinefr.github.io/HTML-CSS-Git-Challenge-Code-Refactor/
+https://appolinefr.github.io/Password-generator/
 
 
 #### Screenshot of deployed page
 
 
-![Screenshot of deployed page](assets/images/Deployed-page.png)
+![Screenshot of deployed page](assets/images/deployed-page.png)
