@@ -103,15 +103,15 @@ const uppercaseCharsSelection = [
   "Z",
 ];
 
-// array receiving confirms for all types of characters
-passwordPool = [];
-
-// var receiving final password
-randomisedPassword = "";
-
 function generatePassword() {
+  // array receiving confirms for all types of characters
+  passwordPool = [];
+
+  // var receiving final password
+  randomisedPassword = "";
   //prompt with password length & validattion of length >8 & <128
   // if the length is outside of this scope the fonction will stop
+  
   const passwordLength = prompt(
     "Please choose a password length of at least 8 characters and maximum 128 characters"
   );
@@ -144,7 +144,7 @@ function generatePassword() {
     ) {
       passwordPool = passwordPool.concat(lowercaseCharsSelection);
     }
-    // if no characters is selected the function stops and the user is alerted 
+    // if no characters is selected the function stops and the user is alerted
     if (
       specChars === false &&
       numericChars === false &&
